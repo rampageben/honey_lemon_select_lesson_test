@@ -1,0 +1,34 @@
+<div contenteditable="true" id="editor1">
+	<table border="1">
+		<tr>
+			<td style="background-color: #f00;"><strong><u>Cell 1</u></strong></td>
+			<td style="text-decoration: underline;">Cell 2</td>
+			<td>Cell 3</td>
+		</tr>
+	</table>
+
+	<p>Test paragraph.</p>
+</div>
+
+<div contenteditable="true" id="editor2">
+	<table border="1">
+		<tr>
+			<td style="background-color: #f00;"><strong><u>Cell 1</u></strong></td>
+			<td style="text-decoration: underline;">Cell 2</td>
+			<td>Cell 3</td>
+		</tr>
+	</table>
+
+	<p>Test paragraph.</p>
+</div>
+
+<script>
+	CKEDITOR.replace('editor1', {
+		allowedContent: true,
+		extraPlugins: 'sourcearea'
+	});
+	CKEDITOR.inline('editor2', {
+		allowedContent: true,
+		extraPlugins: 'dialog,sourcedialog'
+	});
+</script>

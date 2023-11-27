@@ -1,0 +1,18 @@
+<textarea id="classic">
+	<p>Use autocomplete to insert some emoji.</p>
+</textarea>
+<div contenteditable="true" id="divarea">
+	<p>Use autocomplete to insert some emoji.</p>
+</div>
+
+<script>
+	bender.tools.ignoreUnsupportedEnvironment('emoji');
+
+	CKEDITOR.replace('classic', {
+		removeButtons: 'EmojiPanel'
+	});
+	CKEDITOR.replace('divarea', {
+		extraPlugins: 'divarea',
+		removeButtons: 'EmojiPanel'
+	});
+</script>

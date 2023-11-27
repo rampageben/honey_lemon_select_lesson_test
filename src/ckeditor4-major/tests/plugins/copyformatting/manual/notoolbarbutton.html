@@ -1,0 +1,30 @@
+<div contenteditable="true" id="editor1">
+	<p><strong><u><span class="important" style="color: #f00;">Apollo 11</span></u></strong> <s>was the</s> <span
+		class="important" style="color: #f00;">spaceflight</span> that landed the first humans, Americans <a
+		href="http://en.wikipedia.org/wiki/Neil_Armstrong" title="Neil Armstrong">Neil Armstrong</a> and <a
+		href="http://en.wikipedia.org/wiki/Buzz_Aldrin" title="Buzz Aldrin">Buzz Aldrin</a>, on the Moon on July 20,
+		1969, at 20:18 UTC. <span bogus-attr="2" style="background-color: #f00;">Armstrong</span> became the first to
+		step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.</p>
+</div>
+
+<div contenteditable="true" id="editor2">
+	<p><strong><u><span class="important" style="color: #f00;">Apollo 11</span></u></strong> <s>was the</s> <span
+		class="important" style="color: #f00;">spaceflight</span> that landed the first humans, Americans <a
+		href="http://en.wikipedia.org/wiki/Neil_Armstrong" title="Neil Armstrong">Neil Armstrong</a> and <a
+		href="http://en.wikipedia.org/wiki/Buzz_Aldrin" title="Buzz Aldrin">Buzz Aldrin</a>, on the Moon on July 20,
+		1969, at 20:18 UTC. <span bogus-attr="2" style="background-color: #f00;">Armstrong</span> became the first to
+		step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.</p>
+</div>
+
+<script>
+	CKEDITOR.replace('editor1', {
+		allowedContent: true,
+		toolbar: [['Source']],
+		extraPlugins: 'sourcearea'
+	});
+	CKEDITOR.inline('editor2', {
+		allowedContent: true,
+		toolbar: [['Sourcedialog']],
+		extraPlugins: 'dialog,sourcedialog'
+	});
+</script>

@@ -1,0 +1,30 @@
+<div contenteditable="true" id="editor1">
+	<ol>
+		<li><span style="color:#FF8C00;">apple</span>
+	</ol>
+
+	<ul style="list-style-type: square; font-size: 26px;">
+		<li>Square Bullet</li>
+	</ul>
+</div>
+
+<div contenteditable="true" id="editor2">
+	<ol>
+		<li><span style="color:#FF8C00;">apple</span>
+	</ol>
+
+	<ul style="list-style-type: square; font-size: 26px;">
+		<li>Square Bullet</li>
+	</ul>
+</div>
+
+<script>
+	CKEDITOR.replace('editor1', {
+		allowedContent: true,
+		extraPlugins: 'sourcearea'
+	});
+	CKEDITOR.inline('editor2', {
+		allowedContent: true,
+		extraPlugins: 'dialog,sourcedialog'
+	});
+</script>

@@ -1,0 +1,47 @@
+<div class="listt">
+    <table class="table">
+        <thead>
+        <h2>退選</h2>
+        <tr>
+            <th>選課代號</th>
+            <th>課程名稱</th>
+            <th>學分</th>
+            <th>必選修</th>
+            <th>退選</th>
+        </tr>
+        </thead>
+        {foreach from=$ccm_course_forCancel item=ccm_c_f}
+        <tbody>
+        <tr>
+            <td>{$ccm_c_f.course_id}</td>
+            <td>{$ccm_c_f.course_name}</td>
+            <td>{$ccm_c_f.course_credit}</td>
+            <td>{$ccm_c_f.course_RE}</td>
+            <form action="lessonCancel.php" class="form-inline" method="get">
+                <input id="lessonCancel" name="op" type="hidden" value="lessonCancel">
+                <input id="chose_cancel_id" name="chose_cancel_id" type="hidden" value="{$ccm_c_f.course_id}">
+                <td>
+                    <button class="btn btn-danger" type="submit">退選</button>
+                </td>
+            </form>
+        </tr>
+        </tbody>
+        {/foreach}
+    </table>
+</div>
+
+
+<div class="panel panel-default" id='panel'>
+    <div class="panel-heading" id="panel-heading"></div>
+    <h2>訊息</h2>
+    <div class="panel-body" id="panel-body">
+        {if isset($msgdanger)}
+        <br>
+        <b class="text-danger">●{$msgdanger}</b>
+        {/if}
+        {if isset($msgsuccess)}
+        <br>
+        <b class="text-success">●{$msgsuccess}</b>
+        {/if}
+    </div>
+</div>

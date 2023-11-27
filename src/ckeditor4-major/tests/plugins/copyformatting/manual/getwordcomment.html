@@ -1,0 +1,22 @@
+<div contenteditable="true" id="editor1">
+	<p><u>underlined</u></p>
+	<p><span style="color: #0000FF;">baz</span><!-- comment-->foo<span style="color: #0000FF;">ba<!-- comment-->z</span>
+	</p>
+</div>
+
+<div contenteditable="true" id="editor2">
+	<p><u>underlined</u></p>
+	<p><span style="color: #0000FF;">baz</span><!-- comment-->foo<span style="color: #0000FF;">ba<!-- comment-->z</span>
+	</p>
+</div>
+
+<script>
+	CKEDITOR.replace('editor1', {
+		allowedContent: true,
+		extraPlugins: 'sourcearea'
+	});
+	CKEDITOR.inline('editor2', {
+		allowedContent: true,
+		extraPlugins: 'dialog,sourcedialog'
+	});
+</script>

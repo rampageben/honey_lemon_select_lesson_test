@@ -1,0 +1,42 @@
+<div contenteditable="true" id="playground"></div>
+<textarea id="html-comments-bold" name="html-comments-bold">
+	<p>foo</p><!--/end logo --><p> </p><!-- begin: body --><p>a<br />a</p>
+=>
+	<p><strong>foo</strong></p>
+	<!--/end logo -->
+	<p><strong>&nbsp;</strong></p>
+	<!-- begin: body -->
+	<p><strong>a<br />a</strong></p>
+</textarea>
+
+<textarea id="html-comments-between-blocks" name="html-comments-between-blocks">
+	<p>foo</p><!-- com --><p>bar</p>
+=>
+	<p><strong>foo</strong></p>
+	<!-- com -->
+	<p><strong>bar</strong></p>
+</textarea>
+
+<textarea id="html-comments-between-inline" name="html-comments-between-inline">
+	<p><em>foo</em><!-- com --><em>bar</em></p>
+=>
+	<p>
+		<strong>
+			<em>foo</em>
+			<!-- com -->
+			<em>bar</em>
+		</strong>
+	</p>
+</textarea>
+
+<textarea id="html-comments-tailing-inline" name="html-comments-tailing-inline">
+	<p>
+		foo
+		<!-- com -->
+	</p>
+=>
+	<p>
+		<strong>foo</strong>
+		<!-- com -->
+	</p>
+</textarea>

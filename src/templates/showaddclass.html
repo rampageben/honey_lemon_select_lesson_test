@@ -1,0 +1,44 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>課程代號</th>
+        <th>課程名稱</th>
+        <th>教授</th>
+        <th>學分</th>
+        <th>必選修</th>
+        <th>開課班級</th>
+        <th>上課時間</th>
+        <th>上課地點</th>
+        <th>人數</th>
+        <th>加選</th>
+    </tr>
+    </thead>
+    {foreach from=$all_class item=class}
+    <tbody>
+    <tr>
+        <td>{$class.course_id}</td>
+        <td>{$class.course_name}</td>
+        <td>{$class.course_teacher}</td>
+        <td>{$class.course_credit}</td>
+        <td>{$class.course_RE}</td>
+        <td>{$class.course_garde}</td>
+        <td>{$class.course_time}</td>
+        <td>{$class.course_room}</td>
+        <td>{$class.course_people}</td>
+        <form action="Addclass.php" class="form-inline" method="get">
+            <input id="chose_class" name="op" type="hidden" value="chose_class">
+            <input class="form-control" id="class_id" name="class_id" type="hidden" value="{$class_id}">
+            <input id="chose_id" name="chose_id" type="hidden" value="{$class.course_id}">
+            <td>{if $class.already=="true"}
+                已選
+                {else if $class.already=="false"}
+                <button class="btn btn-danger" type="submit">加選</button>
+                {else}
+                已滿
+                {/if}
+            </td>
+        </form>
+    </tr>
+    </tbody>
+    {/foreach}
+</table>

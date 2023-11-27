@@ -1,0 +1,42 @@
+<div contenteditable="true" id="editor1">
+	<ol>
+		<li><strong>aa</strong></li>
+		<li>bb</li>
+		<li>cc</li>
+	</ol>
+
+	<hr>
+
+	<ol start="10">
+		<li>dd</li>
+		<li>ee</li>
+		<li>ff</li>
+	</ol>
+</div>
+
+<div contenteditable="true" id="editor2">
+	<ol>
+		<li><strong>aa</strong></li>
+		<li>bb</li>
+		<li>cc</li>
+	</ol>
+
+	<hr>
+
+	<ol start="10">
+		<li>dd</li>
+		<li>ee</li>
+		<li>ff</li>
+	</ol>
+</div>
+
+<script>
+	CKEDITOR.replace('editor1', {
+		allowedContent: true,
+		extraPlugins: 'sourcearea'
+	});
+	CKEDITOR.inline('editor2', {
+		allowedContent: true,
+		extraPlugins: 'dialog,sourcedialog'
+	});
+</script>

@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{$name}</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/js/jquery.min.js" type="text/javascript"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            src="bootstrap/js/bootstrap.min.js"></script>
+    <script charset="utf-8" src="jQuery_validation_engine/js/languages/jquery.validationEngine-zh_TW.js"
+            type="text/javascript"></script>
+    <script charset="utf-8" src="jQuery_validation_engine/js/jquery.validationEngine.js"
+            type="text/javascript"></script>
+    <link href="jQuery_validation_engine/css/validationEngine.jquery.css" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class='container'>
+    <div class="col-md-16" id="shop_head">
+        <a href="index.php?op=home">
+            <img alt="logo" height="200" src="templates/web_image/home/lemon.png" width="200">
+        </a>
+        <a class="home-link" href="index.php?op=home">
+            <img alt="home" src="templates/web_image/home/home.png" width="80">
+            <span class="home-text">首頁</span>
+        </a>
+        <a class="home-link" href="lessonTable.php?op=lessontable">
+            <img alt="home" src="templates/web_image/home/home.png" width="80">
+            <span class="home-text">檢視課表</span>
+        </a>
+        <a class="home-link" href="Search.php?op=search">
+            <img alt="home" src="templates/web_image/home/home.png" width="80">
+            <span class="home-text">查詢課程</span>
+        </a>
+        <a class="home-link" href="Addclass.php?op=addclass">
+            <img alt="home" src="templates/web_image/home/home.png" width="80">
+            <span class="home-text">加選課程</span>
+        </a>
+        <a class="home-link" href="lessonCancel.php?op=lessonCancel">
+            <img alt="home" src="templates/web_image/home/home.png" width="80">
+            <span class="home-text">退選課程</span>
+        </a>
+
+        <div class="col-md-3 col-sm-4" id="login_frame">
+            {if $op!="login"&&$op!="registered"&&$op!="loginout"}
+            {include file='index_side.html'}
+            {/if}
+        </div>
+        <div class="row" id="shop_main">
+            <div class="col-md-9 col-sm-8" id="show_shop">
+                {if isset($msg)}
+                <b class="text-danger">●{$msg}</b>
+                {/if}
+                {if $op=="home"}
+                <h1>選課系統</h1>
+                {else if $op=="login"||$op=="loginout"}
+                <div style="max-width: 500px;margin: auto;">
+                    {include file='login.html'}
+                </div>
+                {else if $op=="addclass"&&$isuser!=false}
+                {include file='addclass.html'}
+                {else if $op=="search_add_result" || $op=="chose_class"&&$isuser!=false}
+                {include file='addclass.html'}
+                {include file='showaddclass.html'}
+                {else if $op=="lessonTable"&&$isuser!=false}
+                {include file='lessonTable.html'}
+                {else if $op=="lessonCancel"&&$isuser!=false}
+                {include file='lessonCancel.html'}
+                {else if $op=="search"}
+                {include file='search.html'}
+                {else if $op=="search_result"||$op=="search_class_result"||$op=="search_class_teacher"}
+                {include file='search.html'}
+                {include file='show_class.html'}
+                {else}
+                <h1>選課系統吧</h1>
+                {/if}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>

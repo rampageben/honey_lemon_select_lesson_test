@@ -1,0 +1,23 @@
+<style>
+	.red {
+		background-color: red;
+	}
+
+	.blue {
+		background-color: blue;
+	}
+</style>
+
+<button class="red" id="btn">Click me!</button>
+
+<script>
+	var button = CKEDITOR.document.getById('btn'),
+		buffer = new CKEDITOR.tools.buffers.throttle(2000, function () {
+			var css = button.getAttribute('class');
+			button.setAttribute('class', css === 'red' ? 'blue' : 'red');
+		});
+
+	button.on('click', function () {
+		buffer.input();
+	});
+</script>

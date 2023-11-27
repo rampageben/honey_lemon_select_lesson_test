@@ -16,7 +16,7 @@
     ],
     "autoload-dev": {
         "psr-4": {
-            "Recca0120\\Ithome30\\tests\\": "tests/"
+            "Ben\\Test\\tests\\": "tests/"
         }
     },
     "require": {}

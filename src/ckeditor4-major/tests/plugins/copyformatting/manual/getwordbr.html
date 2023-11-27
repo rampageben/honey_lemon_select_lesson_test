@@ -1,0 +1,18 @@
+<div contenteditable="true" id="editor1">
+	<p><u>Copy</u> to <br>me</p>
+</div>
+
+<div contenteditable="true" id="editor2">
+	<p><u>Copy</u> to <br>me</p>
+</div>
+
+<script>
+	CKEDITOR.replace('editor1', {
+		allowedContent: true,
+		extraPlugins: 'sourcearea'
+	});
+	CKEDITOR.inline('editor2', {
+		allowedContent: true,
+		extraPlugins: 'dialog,sourcedialog'
+	});
+</script>
