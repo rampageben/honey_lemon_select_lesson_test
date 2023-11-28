@@ -154,7 +154,7 @@ class Addclass_show_all_class_Test extends TestCase
             'course_garde' => "資訊三甲",
             'course_time' => "星期三第06節,星期三第07節,星期三第08節",
             'course_room' => "工319(電腦實習室)",
-            'course_people' => "65/70",
+            'course_people' => "64/70",
             'already' => "false",
         ];
 
