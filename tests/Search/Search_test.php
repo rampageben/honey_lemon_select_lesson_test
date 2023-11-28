@@ -174,12 +174,18 @@ class Search_test extends \PHPUnit\Framework\TestCase
             'course_garde' => "資訊三甲",
             'course_time' => "星期三第06節,星期三第07節,星期三第08節",
             'course_room' => "工319(電腦實習室)",
-            'course_people' => "65/70",
+            'course_people' => "64/70",
         ];
         $all_class = show_class($class_id, $class_name, $class_teacher);
         $this->assertEquals($test_all_class['course_id'], $all_class[0]['course_id']);
-        //$this->assertEquals($test_all_class['course_name'], $all_class[0]['course_name']);
-        //$this->assertEquals($test_all_class['course_teacher'], $all_class[0]['course_teacher']);
+        $this->assertEquals($test_all_class['course_name'], $all_class[0]['course_name']);
+        $this->assertEquals($test_all_class['course_teacher'], $all_class[0]['course_teacher']);
+        $this->assertEquals($test_all_class['course_credit'], $all_class[0]['course_credit']);
+        $this->assertEquals($test_all_class['course_RE'], $all_class[0]['course_RE']);
+        $this->assertEquals($test_all_class['course_garde'], $all_class[0]['course_garde']);
+        $this->assertEquals($test_all_class['course_time'], $all_class[0]['course_time']);
+        $this->assertEquals($test_all_class['course_room'], $all_class[0]['course_room']);
+        $this->assertEquals($test_all_class['course_people'], $all_class[0]['course_people']);
 
 
         //測試錯誤
@@ -209,12 +215,18 @@ class Search_test extends \PHPUnit\Framework\TestCase
             'course_garde' => "資訊三甲",
             'course_time' => "星期三第06節,星期三第07節,星期三第08節",
             'course_room' => "工319(電腦實習室)",
-            'course_people' => "65/70",
+            'course_people' => "64/70",
         ];
         $all_class = show_class($class_id, $class_name, $class_teacher);
-        //$this->assertEquals($test_all_class['course_id'], $all_class[0]['course_id']);
+        $this->assertEquals($test_all_class['course_id'], $all_class[0]['course_id']);
         $this->assertEquals($test_all_class['course_name'], $all_class[0]['course_name']);
-        //$this->assertEquals($test_all_class['course_teacher'], $all_class[0]['course_teacher']);
+        $this->assertEquals($test_all_class['course_teacher'], $all_class[0]['course_teacher']);
+        $this->assertEquals($test_all_class['course_credit'], $all_class[0]['course_credit']);
+        $this->assertEquals($test_all_class['course_RE'], $all_class[0]['course_RE']);
+        $this->assertEquals($test_all_class['course_garde'], $all_class[0]['course_garde']);
+        $this->assertEquals($test_all_class['course_time'], $all_class[0]['course_time']);
+        $this->assertEquals($test_all_class['course_room'], $all_class[0]['course_room']);
+        $this->assertEquals($test_all_class['course_people'], $all_class[0]['course_people']);
 
         //測試錯誤
         $class_id = "";
@@ -243,12 +255,18 @@ class Search_test extends \PHPUnit\Framework\TestCase
             'course_garde' => "資訊三甲",
             'course_time' => "星期三第06節,星期三第07節,星期三第08節",
             'course_room' => "工319(電腦實習室)",
-            'course_people' => "65/70",
+            'course_people' => "64/70",
         ];
         $all_class = show_class($class_id, $class_name, $class_teacher);
-        //$this->assertEquals($test_all_class['course_id'], $all_class[0]['course_id']);
-        //$this->assertEquals($test_all_class['course_name'], $all_class[0]['course_name']);
+        $this->assertEquals($test_all_class['course_id'], $all_class[0]['course_id']);
+        $this->assertEquals($test_all_class['course_name'], $all_class[0]['course_name']);
         $this->assertEquals($test_all_class['course_teacher'], $all_class[0]['course_teacher']);
+        $this->assertEquals($test_all_class['course_credit'], $all_class[0]['course_credit']);
+        $this->assertEquals($test_all_class['course_RE'], $all_class[0]['course_RE']);
+        $this->assertEquals($test_all_class['course_garde'], $all_class[0]['course_garde']);
+        $this->assertEquals($test_all_class['course_time'], $all_class[0]['course_time']);
+        $this->assertEquals($test_all_class['course_room'], $all_class[0]['course_room']);
+        $this->assertEquals($test_all_class['course_people'], $all_class[0]['course_people']);
 
         //測試錯誤
         $class_id = "";
